@@ -5,7 +5,7 @@ export const ALBUMS = [
         cover: 'the-importance-of-the-music.jpg',
         tracks: [
             {
-                audio: 'z/the-importance-of-music/00-the-importance-of-music.flac',
+                audio: 'src/albums/audio/the-importance-of-music/00-the-importance-of-music.flac',
                 artist: 'Zibi Funkowicz',
                 title: 'The Importance of Music',
 
