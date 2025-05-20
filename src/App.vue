@@ -9,13 +9,7 @@ const player = ref(null)
 
 const playTrack = () => {
   play.value = false
-  if (!ALBUMS[album.value].tracks[track.value]) {
-    album.value++
-    if (!ALBUMS[album.value]) {
-      album.value = 0
-    }
-    track.value = 0
-  }
+
   play.value = true
 }
 
@@ -31,14 +25,27 @@ const isCurrentTrack = (albumValue, trackValue) => {
 
 const next = () => {
   track.value++
+  if (!ALBUMS[album.value].tracks[track.value]) {
+    album.value++
+    if (!ALBUMS[album.value]) {
+      album.value = 0
+    }
+    track.value = 0
+  }
   playTrack()
 }
 
 const prev = () => {
-  if (album.value === 0 && track.value === 0) {
-    return
-  }
   track.value--
+  if (!ALBUMS[album.value].tracks[track.value]) {
+    album.value--
+    if (!ALBUMS[album.value]) {
+      album.value = 0
+    }
+    track.value = 0
+  }
+
+
   playTrack()
 }
 
@@ -61,8 +68,9 @@ onMounted(() => {
         <div class="player-track-title">
           <div>{{ ALBUMS[album].tracks[track].artist }}</div>
           <div class="title-controls">
-            <img src="/public/play-next.svg" class="play-prev-next prev" :class="album === 0 && track === 0 ? 'disabled' : ''" alt="prev" @click="prev" /><strong>{{
-              ALBUMS[album].tracks[track].title }}</strong><img src="/public/play-next.svg" class="play-prev-next"
+            <img src="/public/play-next.svg" class="play-prev-next prev"
+              :class="album === 0 && track === 0 ? 'disabled' : ''" alt="prev" @click="prev" /><strong>{{
+                ALBUMS[album].tracks[track].title }}</strong><img src="/public/play-next.svg" class="play-prev-next"
               alt="next" @click="next" />
           </div>
         </div>
@@ -80,7 +88,7 @@ onMounted(() => {
                 playParticularTrack(currentAlbum, currentTrack)
               }">
                 <div :class="isCurrentTrack(currentAlbum, currentTrack) ? 'track-title active' : 'track-title'">{{ k + 1
-                }}. {{ currentTrack.artist }} - {{ currentTrack.title }}
+                  }}. {{ currentTrack.artist }} - {{ currentTrack.title }}
                   <img v-if="isCurrentTrack(currentAlbum, currentTrack)" src="/public/play-button.svg"
                     class="track-play-icon" />
 

@@ -1,5 +1,31 @@
 export const ALBUMS = [
     {
+        title: 'NAS Life is a Bitch Z-CLASSICS remix',
+        artist: 'Zibi Funkowicz',
+        cover: 'nas-life-is-a-bitch-remix-cover.jpg',
+        tracks: [
+            {
+                audio: 'src/albums/audio/nas-life-a-bitch-remix/nas-life-s-a-bitch-remix.flac',
+                artist: 'Zibi Funkowicz',
+                title: 'NAS Life is a Bitch Z-CLASSICS remix',
+
+            }
+        ]
+    },
+    {
+        title: 'Method Man Bring the Pain Z-FUNK remix',
+        artist: 'Zibi Funkowicz',
+        cover: 'method-man-z-funk-remix.jpg',
+        tracks: [
+            {
+                audio: 'src/albums/audio/methnod-man-bring-the-pain-z-funk-remix/bring-da-pain-remix.flac',
+                artist: 'Zibi Funkowicz',
+                title: 'Method Man Bring the Pain Z-FUNK remix',
+
+            }
+        ]
+    },
+    {
         title: 'The Importance of the Music',
         artist: 'Zibi Funkowicz',
         cover: 'the-importance-of-the-music.jpg',
