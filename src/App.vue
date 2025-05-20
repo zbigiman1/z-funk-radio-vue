@@ -260,6 +260,10 @@ h4 {
   cursor: pointer;
 }
 
+.track-title.active {
+  pointer-events: none;
+}
+
 @media only screen and (max-width: 768px) {
 
   body {
