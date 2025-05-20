@@ -8,9 +8,8 @@ const play = ref(false)
 const player = ref(null)
 
 const playTrack = () => {
-  play.value = false
-
-  play.value = true
+  // play.value = false
+  // play.value = true
 }
 
 const playParticularTrack = (albumValue, trackValue) => {
@@ -63,7 +62,7 @@ onMounted(() => {
       <section class="player">
         <img :src="ALBUMS[album].cover" class="album-cover-player" />
 
-        <audio class="audio" v-if="play && ALBUMS[album]?.tracks[track]" ref="player" id="audio"
+        <audio class="audio" ref="player" id="audio"
           :src="ALBUMS[album].tracks[track].audio" controls autoplay v-on:ended="next"></audio>
         <div class="player-track-title">
           <div>{{ ALBUMS[album].tracks[track].artist }}</div>
