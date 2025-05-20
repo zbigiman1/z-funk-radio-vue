@@ -4,12 +4,10 @@ import { onMounted, ref } from 'vue';
 
 const album = ref(0)
 const track = ref(0)
-const play = ref(false)
 const player = ref(null)
 
 const playTrack = () => {
-  // play.value = false
-  // play.value = true
+  player.value.play()
 }
 
 const playParticularTrack = (albumValue, trackValue) => {
@@ -49,7 +47,7 @@ const prev = () => {
 }
 
 onMounted(() => {
-  play.value = true
+  playTrack()
 })
 </script>
 
