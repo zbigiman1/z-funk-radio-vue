@@ -1,4 +1,4 @@
-const storage = 'http://proum.lh.pl/z-funk-radio/audio'
+const storage = '://proum.lh.pl/z-funk-radio/audio'
 
 export const ALBUMS = [
     {
